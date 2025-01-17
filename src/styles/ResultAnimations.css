@@ -1,0 +1,222 @@
+/*** Main Buttons ***/
+.result-frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem auto;
+    z-index: 5;
+  }
+  
+  .result-frame button {
+    position: relative;
+    transition: all .5s ease;
+  }
+  
+  .result-frame button:first-child {
+    animation: moveLeftButton 0.5s ease-in-out forwards;
+  }
+  
+  .result-frame button:last-child {
+    animation: moveRightButton 0.5s ease-in-out forwards;
+  } 
+  
+  .result-frame .result-button {
+    animation: enlargeButton 0.5s ease-in-out forwards;
+    background-color: #1b1a19; 
+    font-size: clamp(5px, 2.5vw, 100px);
+    font-family: 'Patrick Hand', cursive;
+    color: rgb(234, 234, 234);
+    transition: background-color 0.5s ease; 
+    border: 2px solid rgb(221, 218, 208)
+  }
+  
+  @keyframes moveLeftButton {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100px;
+    }
+  }
+  
+  @keyframes moveRightButton {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -100px;
+    }
+  }
+  
+  @keyframes enlargeButton {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.75);
+    }
+  }
+  
+  .result-frame.reverse button:first-child {
+    animation: moveLeftBack 0.5s ease-in-out forwards;
+  }
+  
+  .result-frame.reverse button:last-child {
+    animation: moveRightBack 0.5s ease-in-out forwards;
+  }
+  
+  .result-frame.reverse .result-button {
+    animation: shrinkButton 0.5s ease-in-out forwards;
+    background-color: #444;
+  }
+  
+  @keyframes moveLeftBack {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  
+  @keyframes moveRightBack {
+    0% {
+      right: -100px;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  
+  @keyframes shrinkButton {
+    0% {
+      transform: scale(1.75);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /*** New Battle Button ***/
+  .new-battle {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    bottom: -20%; 
+    left: 50%;
+    height: 120px;
+    width: clamp(100px, 15vw, 350px);
+    transform: translateX(-50%); 
+    background-color: #ecc85e;
+    color: rgb(16, 15, 15);
+    border: none;
+    padding: 0 2rem;
+    font-size: clamp(15px, 2vw, 30px);
+    font-family: 'Patrick Hand', cursive;
+    border: 5px solid black;
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+    transition: background-color .4s ease, box-shadow .1s ease;
+    z-index: 10;
+  }
+  
+  .new-battle.visible {
+    animation: slideUp 0.5s ease-in-out forwards; 
+  }
+  
+  .new-battle.hidden {
+    animation: slideDown 0.3s ease-in-out forwards; 
+  }
+  
+  @keyframes slideUp {
+    0% {
+      bottom: -20%; 
+    }
+    100% {
+      bottom: 0%; 
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      bottom: 0%; 
+    }
+    100% {
+      bottom: -15%;
+    }
+  }
+  
+  .new-battle:hover {
+    background-color: #c6aa57;
+    box-shadow: inset 7px 7px 1px #b0974e;
+  }
+
+  .new-battle:active {
+    background-color: #ecc85e;
+    box-shadow: inset 10px 10px 2px #9d8846;
+  }
+  
+  .new-battle:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+  }
+  
+
+  @media (max-width: 768px) {
+    @keyframes moveLeftButton {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: -25px;
+        }
+      }
+      
+      @keyframes moveRightButton {
+        0% {
+          right: 0;
+        }
+        100% {
+          right: -25px;
+        }
+      }
+      
+      @keyframes enlargeButton {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.75);
+        }
+      }
+
+      @keyframes moveLeftBack {
+        0% {
+          left: -25px;
+        }
+        100% {
+          left: 0;
+        }
+      }
+      
+      @keyframes moveRightBack {
+        0% {
+          right: -25px;
+        }
+        100% {
+          right: 0;
+        }
+      }
+      
+      @keyframes shrinkButton {
+        0% {
+          transform: scale(1.75);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+  }
