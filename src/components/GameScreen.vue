@@ -8,7 +8,7 @@
     }"
     >
         <img src="@/assets/TitleLogo.png" alt="RPS War" class="title-logo" />
-        <h2 v-if="!result">Choose a weapon!</h2>
+        <h2 v-if="!result">Choose your weapon!</h2>
   
         <div class="choices">
 
